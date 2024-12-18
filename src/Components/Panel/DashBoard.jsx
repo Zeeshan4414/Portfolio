@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import './DashBoard.css';
 import Navbar from '../Navbar/Navbar';
 import '../Navbar/Navbar.css';
-import Bg from '../../assets/back.mp4';
 import Footer from '../Footer/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
@@ -17,7 +16,7 @@ const DashBoard = () => {
     { name: 'Projects', path: 'projects' },
     { name: 'Skills', path: 'skill' },
   ];
-  
+
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -26,6 +25,9 @@ const DashBoard = () => {
       videoRef.current.playbackRate = 0.5; // 0.5 means 50% speed
     }
   }, []);
+
+  // Replace this with your actual Google Drive video ID
+  const videoUrl = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID";
 
   return (
     <div className="relative min-h-screen bg-opacity-50">
@@ -38,7 +40,7 @@ const DashBoard = () => {
         playsInline
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       >
-        <source src={Bg} type="video/mp4" />
+        <source src={videoUrl} type="video/mp4" />
       </video>
 
       {/* Dark Overlay */}
@@ -64,7 +66,7 @@ const DashBoard = () => {
       <Routes>
         <Route path='Home' element={<Home />} />
         <Route path='personalInfo' element={<Personal />} />
-        <Route path='projects' element={<Projects/>} />
+        <Route path='projects' element={<Projects />} />
         <Route path='skill' element={<Skills />} />
       </Routes> 
 
