@@ -1,0 +1,21 @@
+  
+.cont{
+    width: 100%; 
+    max-width: 1400px; 
+    margin: 0 auto;  
+}
+.cont .loader-wrapper {
+    position: fixed !important;
+    top: 0 ;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw !important;
+    height: 100vh !important; 
+    display: flex !important; 
+    justify-content: center !important;
+    align-items: center !important; 
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1000  !important; 
+  }
+  
