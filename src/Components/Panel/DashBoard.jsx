@@ -27,7 +27,7 @@ const DashBoard = () => {
   }, []);
 
   // Replace this with your actual Google Drive video ID
-  const videoUrl = "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID";
+  const videoUrl = "https://drive.google.com/file/d/1P06KMo2OCAp6QHgRcSM1j6BtRXAzO_ZO/view?usp=drive_link";
 
   return (
     <div className="relative min-h-screen bg-opacity-50">
