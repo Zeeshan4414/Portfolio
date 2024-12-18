@@ -1,0 +1,85 @@
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full-screen center */
+    background-color:  rgb(41, 40, 40);
+    padding: 20px;
+  }
+  
+  /* Login Form */
+  .login-form {
+    background: linear-gradient(256deg, rgb(119, 119, 118) 0.34%, rgb(67, 174, 245) 102.30%);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    max-width: 400px;
+    width: 100%;
+  
+  }
+  .login-form h1 b{
+    font-size: 3.5rem;
+    color: #afb3b3;
+    font-family: "Kalam";
+  }
+  .login-form h1,p{
+    text-align: center;
+    margin: 0 auto;
+  }
+  .login-form p{
+    color: #faf4be;
+    margin-bottom: 1rem;
+  }
+  /* Input Container */
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  .input-container label {
+    display: block;
+    font-size: 1.1rem;
+    color: #2f333b;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #666; /* Medium Grey Border */
+    background-color: #e7e5e5; /* Dark Grey Background for Inputs */
+    color: #6e6c6c; /* Light Grey Text */
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Input Focus Effect */
+  .input-container input:focus {
+    border: 2px solid #00BFFF; /* Sky Blue Border on Focus */
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4); /* Sky Blue Shadow on Focus */
+  }
+  
+  /* Button Styling */
+  .login-button {
+    width: 50%;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    color: white;
+    background: linear-gradient(135deg, #00BFFF, #d66556); /* Sky Blue to Black Gradient */
+    cursor: pointer;
+    margin: 0 auto;
+    transition: background 0.5s ease, transform 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background: linear-gradient(135deg, #1C1C1C, #00BFFF); /* Gradient flip */
+    
+  }
+  
+  /* Form hover effect */
+  
+  

@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: "Roboto", cursive;
+}
+
+/* Light Theme */
+:root {
+  --bg-color: rgb(208, 232, 235);
+  --text-color: rgb(7, 53, 59);
+  --button-bg: linear-gradient(256deg, gold 0.34%, rgb(245, 67, 96) 102.30%);
+  --button-text-color: white;
+  --button-border-color: white;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: rgb(41, 40, 40);
+  --text-color: #f5f5f5;
+  --button-bg: linear-gradient(256deg, #444 0.34%, #888 102.30%);
+  --button-text-color: #f5f5f5;
+  --button-border-color: grey;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}

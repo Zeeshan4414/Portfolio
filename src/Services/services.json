@@ -1,0 +1,31 @@
+[
+    {
+      "id": 1,
+      "number": "01",
+      "title": "Frontend Development",
+      "description": "Building interactive, user-friendly web interfaces using modern technologies.",
+      "link": "Read More..."
+    },
+    {
+      "id": 2,
+      "number": "02",
+      "title": "Backend Development",
+      "description": "Developing robust server-side applications and APIs.",
+      "link": "Read More..."
+    },
+    {
+      "id": 3,
+      "number": "03",
+      "title": "WordPress Development",
+      "description": "Creating customizable and efficient websites using WordPress.",
+      "link": "Read More..."
+    },
+    {
+      "id": 4,
+      "number": "04",
+      "title": "SEO Optimization",
+      "description": "Optimizing websites to rank higher in search engines.",
+      "link": "Read More..."
+    }
+  ]
+  
