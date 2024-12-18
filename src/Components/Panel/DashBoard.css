@@ -1,0 +1,13 @@
+
+.hea{
+    background-color: rgb(4, 24, 41);
+    backdrop-filter: blur(50%);
+    height: 70px;
+}
+.hea h1{
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'kalam';
+    -webkit-text-stroke: 2px gray;
+    color: wheat;
+}

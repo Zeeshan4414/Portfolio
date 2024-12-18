@@ -1,0 +1,156 @@
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 60px; 
+    margin: 80px 120px;
+}
+
+.head{
+    position: relative;
+}
+.head h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+    background: linear-gradient(257deg, rgb(152, 206, 241) 0.34%, rgb(199, 201, 201) 103.07%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    color: transparent;
+    font-family: "Kalam" , cursive;
+    
+}
+.head img{
+    position: absolute;
+    bottom : -4rem;
+    left: 1rem;
+    z-index: -1;
+    filter: contrast(50%);
+
+}
+.section{
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    width: 100%;
+}
+.left img {
+    border-radius: 5%;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 1s ease;
+    box-shadow: 0 8px 16px rgba(252, 250, 250, 0.2); 
+    background-color:rgb(153, 216, 224);
+  }
+
+  .left img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 16px 32px rgba(214, 213, 213, 0.4);
+    background-color: rgb(161, 161, 158);
+  }
+  .right{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    flex-grow: 1;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.8rem;
+    text-align: justify;
+  }
+  .aboutSkill{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 20px;
+    width: 100%;
+  }
+  .skill{
+    display: flex;
+    gap: 50px;
+    transition: 0.5s;
+    width: 100%;
+
+  }
+  .skill:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.5s;
+  }
+
+
+.skill p {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    min-width: 120px;
+    text-align: left; 
+}
+
+.skill hr {
+    outline: none;
+    border: none;
+    height: 10px;
+    border-radius: 40px;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    direction: ltr
+}
+  .skill .Html{
+    width: 90%;
+  }
+  .skill .Js{
+    width: 73%;
+  }
+  .skill .React{
+    width: 70%;
+  }
+  .skill .Bootstrap{
+    width: 90%;
+  }
+  .skill .Tailwind{
+    width: 90%;
+  }
+  .skill .Node{
+    width: 50%;
+  }
+  .achievements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    margin-bottom: 1rem;
+  }
+  .achievements hr{
+    color: white;
+    width: 60px;
+    rotate: 90deg;
+  }
+  .ach{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .ach:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+  .ach h1{
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(257deg, rgb(15, 162, 182) 0.34%, rgb(209, 74, 153) 103.07%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    color: transparent;
+  }
+  .ach p{
+    font-family: "Handjet";
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
