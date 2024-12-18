@@ -1,8 +1,8 @@
 import React from 'react'
-import Portfolio from './Components/Portfolio'
+import Portfolio from './Components/Portfolio.jsx'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Admin from './Components/Auth/Admin';
-import DashBoard from './Components/Panel/DashBoard';
+import Admin from './Components/Auth/Admin.jsx';
+import DashBoard from './Components/Panel/DashBoard.jsx';
 
 const App = () => {
   return (
