@@ -1,7 +1,7 @@
 # 🚀 Zeeshan Ahmad - Portfolio  
 
 ## 🌐 Live Demo  
-[http://zeeshansporfolio.vercel.app](#) *(Replace with actual link if hosted)*  
+[http://zeeshansporfolio.vercel.app](#) 
 
 ## 📌 Overview  
 This is the **frontend** of my personal portfolio website, built with **React and Tailwind CSS**. It showcases my skills, projects, and also experience in **Web & React Native Development**.  
@@ -15,7 +15,6 @@ This is the **frontend** of my personal portfolio website, built with **React an
 ## 📂 Features  
 ✅ **Home Section** – Introduction & tagline  
 ✅ **About Section** – My skills & experience  
-✅ **Portfolio Section** – Showcasing my projects  
 ✅ **Services Section** – Web & mobile development services  
 ✅ **Contact Section** – Contact form for inquiries  
 ✅ **Light/Dark Mode** – Theme switcher  
@@ -23,8 +22,16 @@ This is the **frontend** of my personal portfolio website, built with **React an
 ## 🚀 Installation & Setup  
 1. **Clone the repository**  
    ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
-   cd your-portfolio
+   git clone [https://github.com/Zeeshan4414/Portfolio.git]
+   cd Portfolio
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   
+3. **Run the Project**
+   ```bash
+   npm run dev
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
