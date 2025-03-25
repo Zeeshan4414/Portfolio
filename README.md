@@ -18,6 +18,12 @@ This is the **frontend** of my personal portfolio website, built with **React an
 ✅ **Services Section** – Web & mobile development services  
 ✅ **Contact Section** – Contact form for inquiries  
 ✅ **Light/Dark Mode** – Theme switcher  
+✅ **Connect Me Section** – direct messaging  
+✅ **Download CV Button** – Allows users to download my CV  
+✅ **Dashboard Forms** – After login, users can access forms of all these Sections 
+
+## 🔐 Dashboard Access
+After logging in admin dashboard, user can access the all these sections from, where they can add data using forms.
 
 ## 🚀 Installation & Setup  
 1. **Clone the repository**  
