@@ -66,7 +66,7 @@ const Footer = () => {
 
       
       <div className="bg-black py-2 mt-2">
-        <p className="text-center text-sm font-semibold">Copyright &copy; 2024 <span className='font-bold text-blue-400 hover:underline cursor-pointer'>Zeeshan Inc</span>. All Rights Reserved.</p>
+        <p className="text-center text-sm font-semibold">Copyright &copy; 2025 <span className='font-bold text-blue-400 hover:underline cursor-pointer'>Zeeshan Inc</span>. All Rights Reserved.</p>
       </div>
     </footer>
   );
