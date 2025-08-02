@@ -27,7 +27,7 @@ const Hero = ({ theme }) => {
           Connect Me
          </a> 
         </div>
-        <div className={`px-6 py-2 border-2 border-gray-600 font-semibold cursor-pointer text-gray-500 rounded-full relative overflow-hidden transition-background duration-1000 hover:bg-gradient-to-br from-yellow-400 to-red-600 ${theme === 'dark' ? 'border-white-100' : 'border-gray-800'} z-10`}>
+        <div className={`px-6 py-2 border-2 border-gray-600 font-semibold cursor-pointer text-gray-500 rounded-full relative overflow-hidden transition-background duration-1000 hover:bg-gradient-to-br from-yellow-400 to-red-600 ${theme === 'dark' ? 'border-gray-600' : 'border-gray-600'} z-10`}>
           <a href={Resume} download={'Resume'} target="_blank">
           My Resume
           </a>
