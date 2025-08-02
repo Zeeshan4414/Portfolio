@@ -1,6 +1,6 @@
 import React from "react";
 import Profile from '../../assets/Profile.png';
-import Resume from '../../assets/Resume.pdf';
+import Resume from '../../assets/Zeeshan_CV (Updated).pdf';
 import './Hero.css';
 
 const Hero = ({ theme }) => {
