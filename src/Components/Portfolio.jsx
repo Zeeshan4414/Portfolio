@@ -10,7 +10,7 @@ import '../App.css';
 import Footer from './Footer/Footer';
 import ContactForm from './Contact/Contact';
 import Projects from './Project/project';
-// import Experience from './Experience/experience';
+import Experience from './Experience/experience';
 
 const Portfolio = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
