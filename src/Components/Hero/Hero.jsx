@@ -14,7 +14,7 @@ const Hero = ({ theme }) => {
         className={`rounded-full bg-gradient-to-br from-black/70 to-black/30 drop-shadow-lg ${theme === 'dark' ? 'shadow-black' : 'shadow-gray-400'}`} 
       />
       <h1 className="text-xl  md:text-3xl text-center font-semibold">
-        I'm <span className="text-2xl md:text-4xl underline bg-gradient-to-br from-yellow-300/40 to-blue-600/50 bg-clip-text text-transparent font-handjet">ZEESHAN AHMAD</span>, Web developer based in Pakistan.
+        I'm <span className="text-2xl md:text-4xl underline bg-gradient-to-br from-orange-600/90 to-yellow-400/30 bg-clip-text text-transparent font-handjet">ZEESHAN AHMAD</span>, Web developer based in Pakistan.
       </h1>
       <p className="text-center w-[93%] md:w-[590px] text-sm md:text-base">
         With a passion for coding and a keen eye for design, I strive to build
@@ -27,7 +27,7 @@ const Hero = ({ theme }) => {
           Connect Me
          </a> 
         </div>
-        <div className={`px-6 py-2 border-2 border-white font-semibold cursor-pointer text-white rounded-full relative overflow-hidden transition-background duration-1000 hover:bg-gradient-to-br from-yellow-400 to-red-600 ${theme === 'dark' ? 'border-white-100' : 'border-gray-800'} z-10`}>
+        <div className={`px-6 py-2 border-2 border-gray-600 font-semibold cursor-pointer text-gray-500 rounded-full relative overflow-hidden transition-background duration-1000 hover:bg-gradient-to-br from-yellow-400 to-red-600 ${theme === 'dark' ? 'border-white-100' : 'border-gray-800'} z-10`}>
           <a href={Resume} download={'Resume'} target="_blank">
           My Resume
           </a>

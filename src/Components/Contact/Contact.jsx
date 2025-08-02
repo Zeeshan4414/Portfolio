@@ -39,89 +39,62 @@ const ContactForm = ({ theme }) => {
         }
       );
   };
-
   return (
-    <div id="contact">
-      <Head name="Contact Me" size="text-[4rem]" width="md:w-[460px]" />
-      <div className="relative  bg-cover bg-center">
-        <div
-          className=" w-80 md:w-[30rem] mx-auto p-6 sm:p-8 bg-gray-500 rounded-xl border-8  border-orange-300 shadow-4xl mt-12 mb-8 backdrop-blur-lg"
-          
-        >
-          <form ref={form} onSubmit={handleSubmit} className="space-y-4">
-            <div className="relative z-0 mb-4 w-full group">
-              
+    <div id="contact" className="mt-32 mb-20 flex flex-col justify-center items-center">
+      <Head name="Contact Me" size="text-[3.5rem]" width="md:w-[460px]" />
+
+      <div className="w-full max-w-[90%] sm:max-w-xl md:max-w-2xl bg-white/10 dark:bg-white/5 backdrop-blur-md border-4 border-orange-300 dark:border-orange-400 rounded-2xl shadow-xl p-8 sm:p-10 mt-12">
+        <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+          {[
+            { label: 'Name', name: 'name1', type: 'text' },
+            { label: 'Email', name: 'emailFrom', type: 'email' },
+            { label: 'Subject', name: 'subject', type: 'text' },
+          ].map((field) => (
+            <div className="relative" key={field.name}>
               <input
-                type="text"
-                name="name1"
-                value={formData.name1}
+                type={field.type}
+                name={field.name}
+                value={formData[field.name]}
                 onChange={handleChange}
-                className={`block py-2  px-0 w-full text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none text-white focus:outline-none focus:ring-0 focus:border-yellow-500 peer `}
-                placeholder=""
-                required
-              />
-              <label className={`absolute glow-label duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 text-gray-300
-                peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:glow-label peer-focus:text-yellow-500  peer-focus:font-semibold`}>Name:</label>
-            </div>
-            <div className="relative z-0 mb-6 w-full group">
-              
-              <input
-                type="email"
-                name="emailFrom"
-                value={formData.emailFrom}
-                onChange={handleChange}
-                className={`block py-2  px-0 w-full text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none text-white focus:outline-none focus:ring-0 focus:border-yellow-500 peer `}
-                placeholder=""
-                required
-              />
-              <label className={`absolute glow-label duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 text-gray-300
-                peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:glow-label peer-focus:text-yellow-500  peer-focus:font-semibold`}>Email</label>
-            </div>
-            <div className="relative z-0 mb-6 w-full group">
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="block py-2  px-0 w-full text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none text-white focus:outline-none focus:ring-0 focus:border-yellow-500 peer "
-                placeholder=""
+                className={`peer w-full border-b-2 border-gray-300 dark:border-gray-600 bg-transparent py-3 text-base text-gray-500 dark:text-white placeholder-transparent focus:outline-none focus:border-yellow-500 ${ formData.name1 ? 'pt-6' : '' }`}
+                placeholder={field.label}
                 required
               />
               <label
-                className="absolute glow-label duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 text-gray-300
-                peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:glow-label peer-focus:text-yellow-500  peer-focus:font-semibold"
+                className="absolute left-0 top-3 text-sm text-gray-500 dark:text-gray-300 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-yellow-500"
               >
-                Subject
+                {field.label}
               </label>
             </div>
-            <div className="relative z-0 mb-6 w-full group">
-              
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                className={`block py-2  px-0 w-full text-gray-900 bg-transparent border-b-2 border-gray-300 appearance-none text-white focus:outline-none focus:ring-0 focus:border-yellow-500 peer `}
-                placeholder=""
-                rows="5"
-                required
-              ></textarea>
-              <label className={`absolute glow-label duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
-                peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 text-gray-300
-                peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:glow-label peer-focus:text-yellow-500  peer-focus:font-semibold`}>Message</label>
-            </div>
-            <div className="text-center">
-              <button
-                type="submit"
-                className="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600 transition-transform duration-800 transform hover:scale-110 w-full sm:w-auto"
-              >
-                Send Message
-              </button>
-            </div>
-          </form>
-        </div>
+          ))}
+
+          {/* Message Field */}
+          <div className="relative">
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              rows="4"
+              placeholder="Message"
+              className={`peer w-full border-b-2 border-gray-300 dark:border-gray-600 bg-transparent py-3 text-base text-gray-500 dark:text-white placeholder-transparent focus:outline-none focus:border-yellow-500 resize-none ${formData.message ? 'pt-6' : ''} `}
+              required
+            />
+            <label
+              className="absolute left-0 top-3 text-sm text-gray-400 dark:text-gray-300 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-yellow-500"
+            >
+              Message
+            </label>
+          </div>
+
+          <div className="pt-4 text-center">
+            <button
+              type="submit"
+              className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 hover:scale-105"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

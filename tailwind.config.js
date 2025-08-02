@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+    
+        bitcount: ['"Bitcount Prop Single"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
