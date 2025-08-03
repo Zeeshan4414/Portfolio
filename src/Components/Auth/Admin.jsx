@@ -3,7 +3,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from './Firebase';
 import { useNavigate } from 'react-router-dom';
 import { ping } from 'ldrs';
-
+import { FaEnvelope, FaLock, FaSignInAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 const Admin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,47 +31,66 @@ const Admin = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-800 p-5">
-      {loading && (
-        <l-ping
-          size="90"
-          speed="2" 
-          color="grey" 
-        ></l-ping>
-      )}
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-slate-900 to-slate-700 p-5">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        className="bg-gray-900/90 dark:bg-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-md"
+      >
+        <h1 className="text-4xl font-[Bungee] text-center text-blue-600 dark:text-yellow-400 font-kalam mb-2">
+          Login
+        </h1>
+        <p className="text-center font-[Kalam] text-gray-400 dark:text-gray-300 mb-6">
+          Enter your credentials to access your admin panel
+        </p>
 
-      {!loading && (
-        <form className="bg-gradient-to-br from-gray-500 to-blue-500 p-8 rounded-lg shadow-lg max-w-md w-full" onSubmit={handleSubmit}>
-          <h1 className="text-4xl font-bold text-gray-300 text-center mb-4 font-kalam">Login</h1>
-          <p className="text-center text-yellow-100 mb-5">Enter details to log into your account</p>
-          
-          <div className="mb-5">
-            <label className="block text-lg font-semibold text-gray-700 mb-2">Username:</label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full p-3 rounded-lg border-2 border-gray-400 bg-gray-300 text-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-200"
-            />
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div>
+            <label className="block text-gray-500 dark:text-gray-200 font-semibold mb-1">
+              Username
+            </label>
+            <div className="flex items-center bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-3">
+              <FaEnvelope className="text-gray-500 dark:text-gray-300 mr-2" />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="bg-transparent w-full outline-none text-gray-800 dark:text-white placeholder-gray-400"
+                placeholder="Enter email"
+              />
+            </div>
           </div>
 
-          <div className="mb-5">
-            <label className="block text-lg font-semibold text-gray-700 mb-2">Password:</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className="w-full p-3 rounded-lg border-2 border-gray-400 bg-gray-300 text-gray-700 focus:border-blue-500 focus:ring focus:ring-blue-200"
-            />
+          <div>
+            <label className="block text-gray-500 dark:text-gray-200 font-semibold mb-1">
+              Password
+            </label>
+            <div className="flex items-center bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg p-3">
+              <FaLock className="text-gray-500 dark:text-gray-300 mr-2" />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="bg-transparent w-full outline-none text-gray-800 dark:text-white placeholder-gray-400"
+                placeholder="Enter password"
+              />
+            </div>
           </div>
 
-          <button type="submit" className="w-1/2 py-3 rounded-full text-white bg-gradient-to-br from-blue-500 to-red-400 hover:from-gray-900 hover:to-blue-500 mx-auto block transition-transform transform hover:scale-105" disabled={loading}>
-            {loading ? 'Loading...' : 'Login In'}
-          </button>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+            disabled={loading}
+            type="submit"
+            className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full bg-gradient-to-br from-blue-600 to-indigo-500 text-white font-semibold transition-all duration-300 hover:from-indigo-700 hover:to-blue-800 disabled:opacity-60"
+          >
+            <FaSignInAlt /> {loading ? "Logging in..." : "Login"}
+          </motion.button>
         </form>
-      )}
+      </motion.div>
     </div>
   );
 };

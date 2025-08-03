@@ -14,7 +14,7 @@ const Hero = ({ theme }) => {
         className={`rounded-full bg-gradient-to-br from-black/70 to-black/30 drop-shadow-lg ${theme === 'dark' ? 'shadow-black' : 'shadow-gray-400'}`} 
       />
       <h1 className="text-xl  md:text-3xl text-center font-semibold">
-        I'm <span className="text-2xl md:text-4xl underline bg-gradient-to-br from-orange-600/90 to-yellow-400/30 bg-clip-text text-transparent font-handjet">ZEESHAN AHMAD</span>, Web developer based in Pakistan.
+        I'm <span className="text-2xl md:text-4xl underline bg-gradient-to-br from-orange-600/90 to-yellow-400/30 bg-clip-text text-transparent font-handjet">ZEESHAN AHMAD</span>, MERN Stack Developer & AI Enthusiast.
       </h1>
       <p className="text-center w-[93%] md:w-[590px] text-sm md:text-base">
         With a passion for coding and a keen eye for design, I strive to build

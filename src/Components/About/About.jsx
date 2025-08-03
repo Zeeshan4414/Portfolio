@@ -19,7 +19,7 @@ const About = () => {
         <img
   src={Profile}
   alt="My Profile"
-  className="rounded-lg transition-all duration-500 shadow-lg bg-blue-200 hover:scale-105 cursor-pointer hover:shadow-2xl hover:bg-gray-200 w-[240px] h-48 md:w-[360px] md:h-[280px] object-cover"
+  className="rounded-lg transition-all duration-500 shadow-lg bg-blue-200 hover:scale-105 cursor-pointer hover:shadow-2xl hover:bg-gray-200 w-[240px] h-52 md:w-[360px] md:h-[380px] object-cover"
 />
         </div>
 
