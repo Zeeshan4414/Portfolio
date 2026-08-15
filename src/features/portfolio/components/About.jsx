@@ -25,9 +25,9 @@ const About = () => {
   };
 
   const skillsData = [
-    { category: "Frontend", icon: <FaLayerGroup className="text-cyan-400" />, list: ["React.js", "JavaScript", "HTML & CSS", "Tailwind CSS", "Bootstrap"] },
+    { category: "Frontend", icon: <FaLayerGroup className="text-cyan-400" />, list: ["React.js", "Next.js", "JavaScript", "HTML & CSS", "Tailwind CSS", "Bootstrap"] },
     { category: "Backend", icon: <FaDatabase className="text-emerald-400" />, list: ["Node.js", "Express.js", "MongoDB", "MySQL", "REST APIs"] },
-    { category: "Tools & Skills", icon: <FaTools className="text-amber-400" />, list: ["Git & GitHub", "Firebase", "JWT", "Postman", "Responsive UI"] },
+    { category: "Tools & Skills", icon: <FaTools className="text-amber-400" />, list: ["Git & GitHub", "Firebase", "Unity", "Jira & Trello", "Slack", "Google Colab", "JWT", "Postman"] },
   ];
 
   return (
