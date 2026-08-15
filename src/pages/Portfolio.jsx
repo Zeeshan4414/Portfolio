@@ -17,8 +17,15 @@ import CodingBackground from '../components/ui/CodingBackground';
 
 const Portfolio = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { scrollYProgress } = useScroll();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
