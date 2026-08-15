@@ -20,8 +20,8 @@ body {
 
 /* Light Theme */
 :root {
-  --bg-color: rgb(208, 232, 235);
-  --text-color: rgb(7, 53, 59);
+  --bg-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #f1f5f9 100%);
+  --text-color: #0f172a;
   --button-bg: linear-gradient(256deg, gold 0.34%, rgb(245, 67, 96) 102.30%);
   --button-text-color: white;
   --button-border-color: white;
@@ -29,8 +29,8 @@ body {
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --bg-color: rgb(41, 40, 40);
-  --text-color: #f5f5f5;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #0f172a 0%, #020617 100%);
+  --text-color: #f8fafc;
   --button-bg: linear-gradient(256deg, #444 0.34%, #888 102.30%);
   --button-text-color: #f5f5f5;
   --button-border-color: grey;
@@ -38,7 +38,52 @@ body {
 
 /* Apply variables */
 body {
-  background-color: var(--bg-color);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-color);
-  transition: all 0.5s ease;
+  transition: color 0.5s ease;
+  overflow-x: hidden;
+}
+
+/* Premium Drifting Background Blob Animations */
+@keyframes driftOne {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+  }
+}
+
+@keyframes driftTwo {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 50px) scale(1.1);
+  }
+}
+
+@keyframes driftThree {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50px, -40px) scale(0.95);
+  }
+}
+
+.blob-one {
+  animation: driftOne 25s ease-in-out infinite;
+}
+
+.blob-two {
+  animation: driftTwo 30s ease-in-out infinite;
+}
+
+.blob-three {
+  animation: driftThree 28s ease-in-out infinite;
 }
