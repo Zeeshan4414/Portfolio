@@ -6,18 +6,26 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experienceData = [
     {
-      company: "Xcatalyst.io",
+      company: "Xcatalyst Software Company",
       role: "Junior MERN Stack Developer",
       duration: "Jul 2025 - Present",
-      description:
-        "Building responsive full-stack applications using React, Node.js, MongoDB, and Express. Collaborating on scalable projects, writing REST APIs, and integrating third-party services.",
+      description: [
+        "Building and maintaining full-stack applications using the MERN stack (MongoDB, Express.js, React, Node.js), NestJS, and TypeScript.",
+        "Developed cross-platform mobile applications for Android and iOS using React Native and Kotlin Multiplatform (KMP), with API integration and responsive UI implementation.",
+        "Implementing Unity-based low-poly 3D application and game environments, including procedural road generation, traffic systems, level design, and 3D asset integration.",
+        "Collaborating with the development team to implement new features, maintain existing systems, troubleshoot issues, and resolve bugs on Live & Internal Projects.",
+        "Integrating AI technologies into modern applications and development workflows."
+      ]
     },
     {
-      company: "PITB (Punjab Information Technology Board)",
+      company: "Punjab Information Technology Board (PITB)",
       role: "Web Developer Intern",
-      duration: "Jul 2024 - December 2024",
-      description:
-        "Contributed to internal portal development using HTML, CSS, JavaScript, and React. Improved UI/UX and optimized component structure for performance and reusability.",
+      duration: "Jul 2024 - Dec 2024",
+      description: [
+        "Developed responsive web applications with a focus on usability, performance, and cross-browser compatibility.",
+        "Developed a weather forecasting application using React.js with real-time API integration.",
+        "Built a full-stack CRUD application using React.js, Node.js, Express.js, and database integration."
+      ]
     },
   ];
 
@@ -76,9 +84,13 @@ const Experience = () => {
                   {exp.company}
                 </h4>
 
-                <p className="text-sm text-gray-650 dark:text-gray-400 leading-relaxed text-justify">
-                  {exp.description}
-                </p>
+                <ul className="list-disc list-outside pl-4 space-y-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed text-justify">
+                  {exp.description.map((point, pIdx) => (
+                    <li key={pIdx}>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             </div>
           );
