@@ -21,6 +21,19 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Kalam:wght@400;700&display=swap');
     </style>
+
+    <!-- Theme Initialization Script to Prevent Flicker -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

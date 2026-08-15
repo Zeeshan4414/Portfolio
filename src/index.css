@@ -11,6 +11,12 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background-color: #ffffff;
+  transition: background-color 0.5s ease;
+}
+
+html.dark {
+  background-color: #030712;
 }
 
 body {
@@ -38,10 +44,11 @@ body {
 
 /* Apply variables */
 body {
-  background: var(--bg-gradient);
+  background-color: inherit;
+  background-image: var(--bg-gradient);
   background-attachment: fixed;
   color: var(--text-color);
-  transition: color 0.5s ease;
+  transition: color 0.5s ease, background-color 0.5s ease;
   overflow-x: hidden;
 }
 
