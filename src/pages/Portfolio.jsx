@@ -13,6 +13,7 @@ import ContactForm from '../features/portfolio/components/Contact';
 import Projects from '../features/portfolio/components/Projects';
 import Experience from '../features/portfolio/components/Experience';
 import { motion, useScroll } from 'framer-motion';
+import CodingBackground from '../components/ui/CodingBackground';
 
 const Portfolio = () => {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
@@ -52,6 +53,9 @@ const Portfolio = () => {
         className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-yellow-400 via-orange-500 to-indigo-500 origin-left z-[100]"
         style={{ scaleX: scrollYProgress }}
       />
+
+      {/* Coding Rain Background */}
+      <CodingBackground theme={theme} />
 
       {/* Ambient Floating Blobs */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
