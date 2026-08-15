@@ -28,7 +28,7 @@ After logging in admin dashboard, user can access the all these sections from, w
 ## 🚀 Installation & Setup  
 1. **Clone the repository**  
    ```bash
-   git clone [https://github.com/Zeeshan4414/Portfolio.git]
+   git clone https://github.com/Zeeshan4414/Portfolio.git
    cd Portfolio
 
 2. **Install dependencies**
