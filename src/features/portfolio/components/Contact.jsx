@@ -50,7 +50,7 @@ const ContactForm = ({ theme }) => {
 
       <div className="w-full max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
         {/* Left Side: Contact Information Cards */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -72,17 +72,17 @@ const ContactForm = ({ theme }) => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <div className="p-3 bg-green-500/10 text-green-500 rounded-2xl">
                   <FaPhoneAlt size={20} />
                 </div>
                 <div>
-                  <p className="text-xs text-gray-400 dark:text-gray-500 font-semibold font-mono uppercase">Call / WhatsApp</p>
+                  <p className="text-xs text-gray-400 dark:text-gray-500 font-semibold font-mono uppercase">WhatsApp</p>
                   <a href="https://wa.me/qr/ZTM6KULLWXRZH1" target="_blank" rel="noreferrer" className="text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-green-500 transition-colors">
-                    +92 340 7695029
+                    +92 320 4042514
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-blue-500/10 text-blue-500 rounded-2xl">
@@ -100,7 +100,7 @@ const ContactForm = ({ theme }) => {
         </motion.div>
 
         {/* Right Side: Contact Form Card */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
