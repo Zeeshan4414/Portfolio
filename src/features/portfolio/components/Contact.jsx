@@ -119,7 +119,7 @@ const ContactForm = ({ theme }) => {
                   placeholder="Name"
                   required
                 />
-                <label className="absolute left-0 top-3 text-sm text-gray-400 dark:text-gray-500 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-orange-500">
+                <label className="absolute left-0 -top-3.5 text-xs text-gray-450 dark:text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-orange-500">
                   Name
                 </label>
               </div>
@@ -134,7 +134,7 @@ const ContactForm = ({ theme }) => {
                   placeholder="Email"
                   required
                 />
-                <label className="absolute left-0 top-3 text-sm text-gray-400 dark:text-gray-500 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-orange-500">
+                <label className="absolute left-0 -top-3.5 text-xs text-gray-450 dark:text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-orange-500">
                   Email
                 </label>
               </div>
@@ -150,7 +150,7 @@ const ContactForm = ({ theme }) => {
                 placeholder="Subject"
                 required
               />
-              <label className="absolute left-0 top-3 text-sm text-gray-400 dark:text-gray-500 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-orange-500">
+              <label className="absolute left-0 -top-3.5 text-xs text-gray-450 dark:text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-orange-500">
                 Subject
               </label>
             </div>
@@ -166,7 +166,7 @@ const ContactForm = ({ theme }) => {
                 className="peer w-full border-b-2 border-gray-300 dark:border-gray-700 bg-transparent py-3 text-base text-gray-800 dark:text-white placeholder-transparent focus:outline-none focus:border-orange-500 resize-none transition-colors"
                 required
               />
-              <label className="absolute left-0 top-3 text-sm text-gray-400 dark:text-gray-500 transition-all peer-placeholder-shown:top-3.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-0 peer-focus:text-sm peer-focus:text-orange-500">
+              <label className="absolute left-0 -top-3.5 text-xs text-gray-450 dark:text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-orange-500">
                 Message
               </label>
             </div>

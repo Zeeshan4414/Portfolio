@@ -6,16 +6,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size: 16px;
 }
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
-  height: 100vh;
-  font-family: "Roboto", cursive;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Light Theme */
