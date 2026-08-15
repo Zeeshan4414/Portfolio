@@ -1,15 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from '../../assets/Logo.png';
-import './Navbar.css';
-import { ping } from 'ldrs';
 import { Link, useNavigate } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import { motion, AnimatePresence } from 'framer-motion';
+import Theme from '../ui/ThemeToggle';
+import { ping } from 'ldrs';
 
-const Navbar = ({ navItems, buttonText, buttonPath, theme, isMainNavbar, isDashboard }) => {
+const Navbar = ({ navItems, buttonText, buttonPath, theme, toggleTheme, isMainNavbar, isDashboard }) => {
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   ping.register();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleClick = async () => {
     setLoading(true);
@@ -33,7 +47,7 @@ const Navbar = ({ navItems, buttonText, buttonPath, theme, isMainNavbar, isDashb
   };
 
   const handleNavItemClick = (path) => {
-    setIsOpen(false); // Close the menu after clicking an item
+    setIsOpen(false);
     if (isMainNavbar) {
       const element = document.querySelector(path);
       if (element) {
@@ -59,92 +73,113 @@ const Navbar = ({ navItems, buttonText, buttonPath, theme, isMainNavbar, isDashb
         </div>
       )}
       
-      <div className={`nav flex items-center justify-between shadow-lg rounded-lg mx-4 ${isDashboard ? 'max-w-full' : 'md:mx-16'} my-5 overflow-hidden h-20 px-4`}>
+      <header className={`sticky top-5 left-0 right-0 z-50 transition-all duration-300 px-4 md:px-16 ${isDashboard ? 'max-w-full' : ''}`}>
+        <nav className={`w-full h-20 px-6 flex items-center justify-between rounded-2xl border transition-all duration-300 ${
+          scrolled 
+            ? 'bg-white/80 dark:bg-slate-900/60 border-black/5 dark:border-white/10 backdrop-blur-md shadow-lg shadow-black/5' 
+            : 'bg-black/5 dark:bg-white/5 border-black/5 dark:border-white/5 backdrop-blur-sm'
+        }`}>
           {/* Logo */}
-          <img src={logo} alt="Zeeshan" className={`h-32 w-auto object-contain filter invert`} />
-          
-          {/* Mobile Menu Icon */}
-          <div className="md:hidden flex items-center">
-            <button onClick={toggleMenu}>
-              {isOpen ? (
-                <AiOutlineClose className={`text-2xl text-white`} /> // Close button text white
-              ) : (
-                <AiOutlineMenu className={`text-2xl text-white`} />  // Menu icon text white
-              )}
-            </button>
+          <div className="flex items-center">
+            <img src={logo} alt="Zeeshan" className="h-28 w-auto object-contain dark:invert" />
           </div>
-
+          
           {/* Desktop Menu */}
-          <ul className="hidden md:flex gap-10 navItems">
+          <ul className="hidden md:flex items-center gap-8 m-0 p-0">
             {navItems.map((item, index) => (
-              <li key={index} className="relative list-none pb-1 hover:text-grey group">
+              <li key={index} className="list-none group relative">
                 {isMainNavbar ? (
-                  <a href={item.ref} className={`no-underline ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                  <a 
+                    href={item.ref} 
+                    className="text-base md:text-lg font-bold tracking-wide text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 no-underline"
+                  >
                     {item.name}
                   </a>
                 ) : (
-                  <Link to={item.path} className={`no-underline ${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+                  <Link 
+                    to={item.path} 
+                    className="text-base md:text-lg font-bold tracking-wide text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-300 no-underline"
+                  >
                     {item.name}
                   </Link>
                 )}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-yellow-400 to-orange-500 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </li>
             ))}
           </ul>
 
           {/* Action Button for Desktop */}
-          <div 
-            className={`hidden md:block px-5 py-2 rounded-lg bg-gradient-to-br from-yellow-500 to-red-600 cursor-pointer text-white transition-transform duration-300 hover:scale-105 ${theme === 'dark' ? 'border-white' : 'border-gray-800'}`} 
-            onClick={handleClick}
-          >
-            {buttonText}
+          <div className="hidden md:flex items-center gap-5">
+            <Theme theme={theme} toggleTheme={toggleTheme} />
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={handleClick}
+              className="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white font-semibold py-2 px-5 rounded-xl shadow-lg shadow-orange-500/10 transition-all duration-300 text-sm"
+            >
+              {buttonText}
+            </motion.button>
           </div>
 
-          {/* Overlay when menu is open */}
-          <div className={`fixed top-0 left-0 z-50 ${isOpen ? 'block' : 'hidden'}`} onClick={toggleMenu}></div>
+          {/* Mobile Menu Icon */}
+          <div className="md:hidden flex items-center gap-3">
+            <Theme theme={theme} toggleTheme={toggleTheme} />
+            <button 
+              onClick={toggleMenu}
+              className="p-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+            >
+              {isOpen ? <AiOutlineClose size={20} /> : <AiOutlineMenu size={20} />}
+            </button>
+          </div>
+        </nav>
 
-          {/* Mobile Menu */}
-          <div className={`absolute w-full 
-  ${isDashboard 
-    ? 'max-w-[calc(100%-2rem)] mx-2 top-[4.5rem] left-2   ' 
-    : 'max-w-[calc(100%-6.3rem)] mx-4 md:max-w-[calc(100%-8rem)] md:mx-16 top-0 left-0 h-4/4 '} 
-  bg-gray-900 text-white shadow-lg rounded-md transform z-30
-  ${isOpen ? 'translate-y-24' : '-translate-y-full'} 
-  transition-transform duration-300`}>
-
-            <ul className="flex flex-col items-center gap-6 p-4">
-              {navItems.map((item, index) => (
-                <li key={index} className="relative list-none pb-1 group">
-                  {isMainNavbar ? (
-                    <a
-                      href={item.ref}
-                      className="no-underline text-white group-hover:text-sky-400 transition-colors duration-300"
-                      onClick={() => handleNavItemClick(item.ref)}
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className="no-underline text-white group-hover:text-sky-400 transition-colors duration-300"
-                      onClick={() => handleNavItemClick(item.path)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-sky-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out origin-left"></span>
-                </li>
-              ))}
-              <div
-                className="px-5 py-2 mt-4 w-full rounded-lg bg-gradient-to-br from-yellow-500 to-red-600 cursor-pointer text-white text-center transition-transform duration-300 hover:scale-105"
-                onClick={handleClick}
+        {/* Mobile Dropdown Menu with Framer Motion */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.2 }}
+              className="absolute top-20 left-4 right-4 bg-slate-900/90 border border-white/10 backdrop-blur-xl rounded-2xl p-6 shadow-2xl z-40 flex flex-col gap-4 md:hidden"
+            >
+              <ul className="flex flex-col gap-4 p-0 m-0">
+                {navItems.map((item, index) => (
+                  <li key={index} className="list-none">
+                    {isMainNavbar ? (
+                      <a
+                        href={item.ref}
+                        onClick={() => setIsOpen(false)}
+                        className="block py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors no-underline"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={item.path}
+                        onClick={() => setIsOpen(false)}
+                        className="block py-2 text-base font-semibold text-gray-300 hover:text-white transition-colors no-underline"
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  handleClick();
+                }}
+                className="w-full bg-gradient-to-r from-yellow-500 to-orange-600 text-white font-semibold py-2.5 px-5 rounded-xl shadow-lg text-center text-sm"
               >
                 {buttonText}
-              </div>
-            </ul>
-          </div>
-        </div>
-      {/* navbar end */}
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </header>
     </>
   );
 };

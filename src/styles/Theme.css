@@ -1,12 +1,10 @@
 .toggle-container {
   position: relative;
-  width: 75px;
-  height: 70px;
+  width: 60px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  float: right;
-  margin: 5px;
 }
 
 .toggle-checkbox {

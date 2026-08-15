@@ -71,13 +71,15 @@ const Portfolio = () => {
       ) }
      { !loading && (   
         <div className="cont">
-          <Theme theme={theme} toggleTheme={toggleTheme} />
+
           <Navbar
             navItems={navItems}
             buttonText="Get Started"
             buttonPath='/ZeeshanAhmad4414/Admin'
             isMainNavbar={true}
             isDashboard={false}
+            theme={theme}
+            toggleTheme={toggleTheme}
           />
           <Hero />
           <About />
