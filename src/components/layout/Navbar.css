@@ -1,0 +1,42 @@
+.nav{
+    
+    box-shadow: 0 2px 10px rgba(32, 32, 32, 0.4);
+    background-color: rgb(46, 45, 45);
+    border-radius: 10px;
+    margin: 20px 70px;
+    overflow: hidden;
+    height: 5rem;
+    padding: 0 10px;
+}
+
+.navItems li {
+    position: relative;
+    list-style: none;
+    padding-bottom: 5px; 
+  }
+  
+  .navItems li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; 
+    height: 2px;
+    background-color: rgb(114, 198, 219); 
+    transition: width 0.5s ease-in-out; 
+  }
+  
+  .navItems li:hover::after {
+    width: 100%;
+  }
+  .navItems li:hover {
+    cursor: pointer;
+  }
+  .navItems li a{
+    text-decoration: none;
+    color: whitesmoke
+  }
+  .navItems li a:hover{
+    color: rgb(114, 198, 219)
+  }
+

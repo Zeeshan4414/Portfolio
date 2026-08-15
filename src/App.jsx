@@ -1,8 +1,9 @@
 import React from 'react'
-import Portfolio from './Components/Portfolio.jsx'
+import Portfolio from './pages/Portfolio.jsx'
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import Admin from './Components/Auth/Admin.jsx';
-import DashBoard from './Components/Panel/DashBoard.jsx';
+import Admin from './features/auth/components/AdminLogin.jsx';
+import DashBoard from './features/dashboard/components/Dashboard.jsx';
+import ProtectedRoute from './components/ui/ProtectedRoute.jsx';
 
 const App = () => {
   return (
@@ -11,7 +12,14 @@ const App = () => {
      <Routes>
       <Route    path='/' element={<Portfolio/>}/>
       <Route    path='/ZeeshanAhmad4414/Admin' element={<Admin/>}/>
-      <Route    path='/Admin/Dashboard/*' element={<DashBoard/>}/>
+      <Route    
+        path='/Admin/Dashboard/*' 
+        element={
+          <ProtectedRoute>
+            <DashBoard />
+          </ProtectedRoute>
+        }
+      />
       </Routes> 
     </Router>  
     </>
