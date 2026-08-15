@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Profile from '../../../assets/Profile.png';
-import Resume from '../../../assets/Zeeshan_CV (Updated).pdf';
+import Resume from '../../../assets/Zeeshan_Resume(Updated).pdf';
 import './Hero.css';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
