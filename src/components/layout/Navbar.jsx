@@ -46,10 +46,20 @@ const Navbar = ({ navItems, buttonText, buttonPath, theme, isMainNavbar, isDashb
 
   return (
     <>
-      {loading ? (
-        <l-ping size="90" speed="2" color="grey"></l-ping>
-      ) : (
-        <div className={`nav flex items-center justify-between shadow-lg rounded-lg mx-4 ${isDashboard ? 'max-w-full' : 'md:mx-16'} my-5 overflow-hidden h-20 px-4`}>
+      {loading && (
+        <div 
+          className="loader-wrapper"
+          style={{
+            background: 'rgba(15, 23, 42, 0.45)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+          }}
+        >
+          <l-ping size="90" speed="2" color="grey"></l-ping>
+        </div>
+      )}
+      
+      <div className={`nav flex items-center justify-between shadow-lg rounded-lg mx-4 ${isDashboard ? 'max-w-full' : 'md:mx-16'} my-5 overflow-hidden h-20 px-4`}>
           {/* Logo */}
           <img src={logo} alt="Zeeshan" className={`h-32 w-auto object-contain filter invert`} />
           
@@ -134,7 +144,7 @@ const Navbar = ({ navItems, buttonText, buttonPath, theme, isMainNavbar, isDashb
             </ul>
           </div>
         </div>
-      )}
+      {/* navbar end */}
     </>
   );
 };
